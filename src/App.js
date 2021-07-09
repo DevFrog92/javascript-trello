@@ -8,10 +8,6 @@ function App($target) {
     });
   };
 
-  this.setState = (nextState) => {
-    this.state = nexState;
-  };
-
   this.init();
 }
 
