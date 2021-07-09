@@ -11,7 +11,7 @@ const option = {
 const request = async (url, option = {}) => {
   const response = await fetch(url, option);
   if (response.ok) {
-    return await response.json;
+    return await response.json();
   } else {
     throw new Error(response.status);
   }
