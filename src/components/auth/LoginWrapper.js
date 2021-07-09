@@ -1,5 +1,6 @@
 import LoginForm from "./login/LoginForm.js";
 import { api } from "../../api/api.js";
+import { setCookie } from "../../util/cookie.js";
 
 function LoginWrapper({ $target }) {
   if (!new.target) {
@@ -17,6 +18,7 @@ function LoginWrapper({ $target }) {
           password: loginPassword,
         });
         localStorage.setItem("user_token", userToken.accessToken);
+        setCookie("userToken", userToken.accessToken, 3);
       } catch (error) {
         console.log(error);
       }
